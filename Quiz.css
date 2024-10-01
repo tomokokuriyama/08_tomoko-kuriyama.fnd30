@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color:rgb(254, 213, 164);
+}
+
+hi {
+    width: 500px;
+    height: 500px;
+    font-size:small;
+    background-color:aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* margin-bottom: 20px; */
+}
+img{
+    width: 100px;
+    height: 100px; 
+}
