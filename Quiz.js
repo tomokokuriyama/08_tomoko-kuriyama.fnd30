@@ -72,7 +72,7 @@ const allQuestions = [
     　QuizTaken:0,
     　correct:0,
     　Incorrect:0
-    },
+      },
       {
     　Number: "007",
     　quiz: "ベルリンの壁崩壊",
@@ -82,8 +82,8 @@ const allQuestions = [
     　QuizTaken:0,
     　correct:0,
     　Incorrect:0
-    },
-    {
+      },
+      {
     　Number: "008",
     　quiz: "昭和の米騒動",
     　Year: "1918",
@@ -92,9 +92,8 @@ const allQuestions = [
     　QuizTaken:0,
     　correct:0,
     　Incorrect:0
-    },
-
-    {
+      },
+     {
     　Number: "009",
     　quiz: "本能寺の変",
     　Year: "1582",
@@ -111,6 +110,7 @@ const allQuestions = [
     randomIndex = Math.floor( Math.random() * allQuestions.length );
 
     document.getElementById("correctYear").innerText = '';//初期化
+    document.getElementById("rightOrWrong").innerText = '';//初期化
     document.getElementById("correctMemory").innerText = '';//初期化
     document.getElementById("Taken").innerText = '';//初期化
     document.getElementById("correct").innerText = '';//初期化
