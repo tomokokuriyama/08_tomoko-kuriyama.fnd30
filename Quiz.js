@@ -28,7 +28,7 @@ const allQuestions = [
     　quiz: "遣唐使の廃止",
     　Year: "894",
     　Memorymethods: "白紙(894)に戻す遣唐使",
-    　About:"◎◎",
+    　About:"菅原道真によって廃止された",
       QuizTaken:0,
       correct:0,
       Incorrect:0
@@ -48,35 +48,86 @@ const allQuestions = [
     　quiz: "昭和の米騒動",
     　Year: "1918",
     　Memorymethods: "遠く富山(1918)で米騒動",
-    　About:"◎た",
+    　About:"米の価格急騰に伴う暴動事件",
     　QuizTaken:0,
     　correct:0,
     　Incorrect:0
     },
+    {
+      　Number: "005",
+      　quiz: "昭和の米騒動",
+      　Year: "1549",
+      　Memorymethods: "以後よく(1549)広まるキリスト教",
+      　About:"スペイン人のザビエルが伝えた",
+      　QuizTaken:0,
+      　correct:0,
+      　Incorrect:0
+      },
+      {
+    　Number: "006",
+    　quiz: "コロンブスのアメリカ大陸発見",
+    　Year: "1492",
+    　Memorymethods: "意欲に(1492)満ちたコロンブス",
+    　About:"東方見聞録を読みジパング（日本）を目指した",
+    　QuizTaken:0,
+    　correct:0,
+    　Incorrect:0
+    },
+      {
+    　Number: "007",
+    　quiz: "ベルリンの壁崩壊",
+    　Year: "1989",
+    　Memorymethods: "行くわ崩しに(1989)ベルリンの壁",
+    　About:"これにより東西間の隔たりが解消され、冷戦締結につながった",
+    　QuizTaken:0,
+    　correct:0,
+    　Incorrect:0
+    },
+    {
+    　Number: "008",
+    　quiz: "昭和の米騒動",
+    　Year: "1918",
+    　Memorymethods: "遠く富山(1918)で米騒動",
+    　About:"米の価格急騰に伴う暴動事件",
+    　QuizTaken:0,
+    　correct:0,
+    　Incorrect:0
+    },
+
+    {
+    　Number: "009",
+    　quiz: "本能寺の変",
+    　Year: "1582",
+    　Memorymethods: "一行(15)パニック(82)、本能寺",
+    　About:"明智光秀の謀反により織田信長が自害",
+    　QuizTaken:0,
+    　correct:0,
+    　Incorrect:0
+      },
 ]
 
-
- //テスト開始ボタンを押すとテストをランダムに出題する
- const  randomIndex = Math.floor( Math.random() * allQuestions.length );
-
+ let  randomIndex 
  document.getElementById("startButton").addEventListener('click', function() {
-  
-    // console.log( random );
-    // const questionElement = allQestions[randomIndex];
+    randomIndex = Math.floor( Math.random() * allQuestions.length );
 
+    document.getElementById("correctYear").innerText = '';//初期化
+    document.getElementById("correctMemory").innerText = '';//初期化
+    document.getElementById("Taken").innerText = '';//初期化
+    document.getElementById("correct").innerText = '';//初期化
+    document.getElementById("incorrect").innerText = '';//初期化
+    document.getElementById("per").innerText = '';//初期化
+    document.getElementById("ipNum").value = '';//初期化
     const questionText = allQuestions[randomIndex].quiz + "は何年でしょうか？（西暦でお答えください)"
-    //const userAnswer = question.question;
-    // alllQuestions++;
+    
     // クラス名 'question' を持つ要素にテキストを設定
-    document.querySelector('.question').innerText = questionText;
+    document.getElementById("question").innerText = questionText;
 
   });
 
   document.getElementById("answerButton").addEventListener('click', function() {
-    const userAnswer = document.getElementById("answernum").value//IPデータからの取得はvalueらしい
+    const userAnswer = document.getElementById("ipNum").value//IPデータからの取得はvalueらしい
     let answerText = ""
     if (userAnswer === allQuestions[randomIndex].Year) {
-        // correctAnswers++;
       answerText = "正解です！";
       allQuestions[randomIndex].correct = allQuestions[randomIndex].correct +1;
     } else {
@@ -84,19 +135,17 @@ const allQuestions = [
       allQuestions[randomIndex].Incorrect = allQuestions[randomIndex].Incorrect + 1;
     }
 
-  //クイズ回数をカウント
+    //クイズ回数をカウント
     allQuestions[randomIndex].QuizTaken = allQuestions[randomIndex].QuizTaken + 1;
 
-    document.querySelector(".answerNum").innerText = answerText;
+    document.getElementById("rightOrWrong").innerText = answerText;
 
-    document.querySelector(".correctYear").innerText = allQuestions[randomIndex].Year + "年"
-    document.querySelector(".correctMemory").innerText = "覚え方 : " + allQuestions[randomIndex].Memorymethods
-    document.querySelector(".Taken").innerText = "クイズ回数 : " + allQuestions[randomIndex].QuizTaken
-    document.querySelector(".correct").innerText = "正解数 : " + allQuestions[randomIndex].correct
-    document.querySelector(".incorrect").innerText = "不正解数 : " + allQuestions[randomIndex].Incorrect
-    document.querySelector(".per").innerText = "正答率 : " + (allQuestions[randomIndex].correct/allQuestions[randomIndex].QuizTaken * 100) + "%"
-
+    document.getElementById("correctYear").innerText = allQuestions[randomIndex].Year + "年"
+    document.getElementById("correctMemory").innerText  = "覚え方 : " + allQuestions[randomIndex].Memorymethods
+    document.getElementById("Taken").innerText  = "クイズ回数 : " + allQuestions[randomIndex].QuizTaken
+    document.getElementById("correct").innerText  = "正解数 : " + allQuestions[randomIndex].correct
+    document.getElementById("incorrect").innerText  = "不正解数 : " + allQuestions[randomIndex].Incorrect
+    document.getElementById("per").innerText  = "正答率 : " + (allQuestions[randomIndex].correct/allQuestions[randomIndex].QuizTaken * 100).toFixed(0) + "%"
     
-    // // 現在の内容をクリア
-    // gatorContainer.innerHTML = '';
-  })
+
+  });
