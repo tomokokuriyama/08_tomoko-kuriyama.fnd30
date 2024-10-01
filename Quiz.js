@@ -55,7 +55,7 @@ const allQuestions = [
     },
     {
       　Number: "005",
-      　quiz: "昭和の米騒動",
+      　quiz: "キリスト教伝来",
       　Year: "1549",
       　Memorymethods: "以後よく(1549)広まるキリスト教",
       　About:"スペイン人のザビエルが伝えた",
