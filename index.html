@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <!-- inside index.html -->
+<!-- the order of imports is important -->
+<script type="text/javascript" src="modules/lodash.min.js"></script>
+<script type="text/javascript" src="modules/test-boilerplate.js"></script>
+<!-- <script type="text/javascript" src="Quiz.js"></script> -->
+<title>dummy_歴史年号クイズ</title>
+<link rel="stylesheet" href="Quiz.css">
+</head>
+
+<body>
+  <h1>歴史年号クイズです！</h1>
+  <img src="C:\Users\2428773\Downloads\新しいフォルダー\dig-foundations\presentation_quiz\img\nigaoe_ino_tadataka.png">
+  <h2>下記のStartボタンをクリックで、クイズが始まります</h2>
+  <p>
+    <input type="button" id="startButton" value="クイズスタート！" name="startButton" >
+  </p>
+
+
+  <div id="question">
+
+    <div class="question">
+    <br>
+    <br> 
+    <br>
+    </div>
+
+  </div>
+    <div class="answerzoon">
+    <input type="number" id="answernum" name="answernum" required minlength="1" maxlength="4" placeholder="数字を入力" >
+    <input type="button" id="answerButton" name="answerButton" value="回答OK" ><br>
+    <br>
+    </div>
+    <div class="answerNum">
+    </div>
+    <br>
+   <div class="allcorrect">
+   <dt class="correctYear">     </dt>
+   <dt class="correctMemory">     </dt>
+   <dt class="Taken">     </dt>
+   <dt class="correct">     </dt>
+   <dt class="incorrect">     </dt>
+   <dt class="per">     </dt>
+  </h1>
+  <script type="text/javascript" src="Quiz.js"></script>
+</body>
+
+</html>
